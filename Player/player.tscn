@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctf8j81kpsngs"]
+
+[ext_resource type="Texture2D" uid="uid://cgt36v0gwvnkf" path="res://Images/grumpy_old_man.png" id="1_ek6ui"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_hscji"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_waxdh"]
+radius = 15.0
+height = 366.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_hscji")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ek6ui")
+offset = Vector2(0, -400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, -20)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_waxdh")

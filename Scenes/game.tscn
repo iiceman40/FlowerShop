@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://udkrsbu8goqu"]
+
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_4wc4t"]
+[ext_resource type="PackedScene" uid="uid://b1p8lpnw70oss" path="res://Scenes/room.tscn" id="2_s8iyi"]
+[ext_resource type="PackedScene" uid="uid://but32oqfiky6h" path="res://Objects/desk.tscn" id="3_2nqhq"]
+[ext_resource type="PackedScene" uid="uid://ctf8j81kpsngs" path="res://Player/player.tscn" id="4_dne8y"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_4wc4t")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="Room" parent="." instance=ExtResource("2_s8iyi")]
+
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(452, 991)
+scale = Vector2(0.5, 0.5)
+
+[node name="Player" parent="Node2D" instance=ExtResource("4_dne8y")]
+position = Vector2(2364, -146)
+
+[node name="Desk" parent="Node2D" instance=ExtResource("3_2nqhq")]
+position = Vector2(2304, -82)
+scale = Vector2(1.2, 1.2)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

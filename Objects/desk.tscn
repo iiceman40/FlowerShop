@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://but32oqfiky6h"]
+
+[ext_resource type="Texture2D" uid="uid://dnjvtt2mhkfs1" path="res://Images/desk.png" id="1_amela"]
+
+[node name="Desk" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_amela")
+offset = Vector2(0, -100)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 61)
+rotation = -0.10472
+skew = 0.15708
+polygon = PackedVector2Array(-359.127, -117.7, 214.865, 89.5823, 371.824, -23.1655, -208.578, -122.971)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1p8lpnw70oss"]
+
+[ext_resource type="Texture2D" uid="uid://cdkf3vmpxnrdk" path="res://Images/empty_shop.jpg" id="1_87pag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8nk0"]
+size = Vector2(1923, 42)
+
+[node name="Room" type="StaticBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1090.0
+texture = ExtResource("1_87pag")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, 1078, 12, 1014, 102, 945, 161, 926, 247, 864, 790, 872, 791, 913, 1135, 915, 1142, 860, 1671, 859, 1905, 1014, 1921, 1073, 1918, 2, 2, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(961, 1096)
+shape = SubResource("RectangleShape2D_f8nk0")
